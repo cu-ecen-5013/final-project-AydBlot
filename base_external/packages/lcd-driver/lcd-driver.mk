@@ -11,6 +11,6 @@ define LCD_DRIVER_INSTALL_TARGET_CMDS
 
 endef
 
-LCD_DRIVER_MODULE_SUBDIRS = aesd-char-driver
+LCD_DRIVER_MODULE_SUBDIRS = 
 
 $(eval $(generic-package))
