@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LCD_DRIVER
+	bool "lcd-driver"
+	help
+	  includes the lcd linux module driver
