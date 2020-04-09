@@ -47,6 +47,14 @@ __EOF__
 
 done
 
+
+#Enable Wifi conf files
+cp package/busybox/S10mdev ${TARGET_DIR}/etc/init.d/S10mdev
+chmod 755 ${TARGET_DIR}/etc/init.d/S10mdev
+cp package/busybox/mdev.conf ${TARGET_DIR}/etc/mdev.conf
+cp board/raspberrypi3/interfaces ${TARGET_DIR}/etc/network/interfaces
+cp board/raspberrypi3/wpa_supplicant.conf ${TARGET_DIR}/etc/wpa_supplicant.conf
+
 # Pass an empty rootpath. genimage makes a full copy of the given rootpath to
 # ${GENIMAGE_TMP}/root so passing TARGET_DIR would be a waste of time and disk
 # space. We don't rely on genimage to build the rootfs image, just to insert a
@@ -54,4 +62,15 @@ done
 
 trap 'rm -rf "${ROOTPATH_TMP}"' EXIT
 ROOTPATH_TMP="$(mktemp -d)"
+
+rm -rf "${GENIMAGE_TMP}"
+
+genimage \
+	--rootpath "${ROOTPATH_TMP}"   \
+	--tmppath "${GENIMAGE_TMP}"    \
+	--inputpath "${BINARIES_DIR}"  \
+	--outputpath "${BINARIES_DIR}" \
+	--config "${GENIMAGE_CFG}"
+
+exit $?
 

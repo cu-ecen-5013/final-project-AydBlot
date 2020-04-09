@@ -4,6 +4,9 @@
 
 source shared.sh
 
+cp base_external/post-image.sh buildroot/board/raspberrypi3/post-image.sh
+cp base_external/interfaces buildroot/board/raspberrypi3/interfaces
+cp base_external/wpa_supplicant.conf buildroot/board/raspberrypi3/wpa_supplicant.conf
 EXTERNAL_REL_BUILDROOT=../base_external
 git submodule init
 git submodule sync
