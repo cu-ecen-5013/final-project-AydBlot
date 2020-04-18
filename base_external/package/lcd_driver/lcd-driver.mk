@@ -5,11 +5,12 @@ LCD_DRIVER_SITE_METHOD = git
 $(eval $(kernel-module))
 
 define LCD_DRIVER_BUILD_CMDS
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D) default
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D) all
 endef
 
 define LCD_DRIVER_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 0755 $(@D)/aesd_lcd_util_sp1 $(TARGET_DIR)/usr/bin
+	$(INSTALL) -m 0755 $(@D)/lcd-util/aesd_lcd_util $(TARGET_DIR)/usr/bin
 endef
 
 LCD_DRIVER_MODULE_SUBDIRS = /lcd-driver
