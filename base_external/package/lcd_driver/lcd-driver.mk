@@ -9,7 +9,6 @@ define LCD_DRIVER_BUILD_CMDS
 endef
 
 define LCD_DRIVER_INSTALL_TARGET_CMDS
-	$(INSTALL) -m 0755 $(@D)/aesd_lcd_util_sp1 $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 0755 $(@D)/lcd-util/aesd_lcd_util $(TARGET_DIR)/usr/bin
 endef
 
