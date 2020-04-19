@@ -1,4 +1,4 @@
-LCD_DRIVER_VERSION = c0ea34e8f4bc54e53dd639373ebf61876b96de66
+LCD_DRIVER_VERSION = ed23b55150cfc10754217ca4da3444978a94b26c
 LCD_DRIVER_SITE = git@github.com:cu-ecen-5013/final-project-ssssNick.git
 LCD_DRIVER_SITE_METHOD = git
 
