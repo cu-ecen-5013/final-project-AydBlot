@@ -1,6 +1,6 @@
 # For use with Easy-RSA 3.1 and OpenSSL or LibreSSL
 
-RANDFILE		= $ENV::EASYRSA_PKI/.rnd
+RANDFILE		= randfile
 
 ####################################################################
 [ ca ]

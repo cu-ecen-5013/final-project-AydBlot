@@ -5,7 +5,7 @@ start)
 echo "Starting init script for tun module"
 modprobe tun
 echo 1 > /proc/sys/net/ipv4/ip_forward
-#sh /usr/startupscripts/firewall.sh
+sh /usr/startupscripts/firewall.sh
 #sh /usr/startupscripts/vpn_setup.sh
 ;;
 stop)
