@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case "$1" in
+start)
+echo "Starting init script for tun module"
+modprobe tun
+echo 1 > /proc/sys/net/ipv4/ip_forward
+#sh /usr/startupscripts/firewall.sh
+#sh /usr/startupscripts/vpn_setup.sh
+;;
+stop)
+echo "Removing tun modules"
+rmmod tun
+;;
+*)
+echo "Usage: $0 {start|stop}"
+exit 1
+esac
+exit 0
