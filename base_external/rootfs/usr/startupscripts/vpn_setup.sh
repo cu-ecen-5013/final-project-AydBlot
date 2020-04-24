@@ -34,5 +34,9 @@ cp pki/ca.crt /etc/openvpn/client/ >> $LOGFILE
 cp pki/issued/client01.crt /etc/openvpn/client/ >> $LOGFILE 
 cp pki/private/client01.key /etc/openvpn/client/ >> $LOGFILE 
 
+#Place the proper IP address in the client configuration
+IP_ADDRESS=$(cat /etc/network/vpn_ip_address.txt)
+sed -i "5i$IP_ADDRESS" /etc/openvpn/client/client01.ovpn
+
 openvpn --config /etc/openvpn/server/server.conf
 echo "FINISHED" >> $LOGFILE 
