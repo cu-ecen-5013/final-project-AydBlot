@@ -6,10 +6,10 @@ echo "Starting init script for openvpn modules"
 modprobe tun
 echo 1 > /proc/sys/net/ipv4/ip_forward
 sh /usr/startupscripts/firewall.sh
-if grep -Fxq FINISHED $LOGFILE
-then
-	openvpn --config /etc/openvpn/server/server.conf
-fi
+# if grep -Fxq FINISHED $LOGFILE
+# then
+# 	openvpn --config /etc/openvpn/server/server.conf
+# fi
 ;;
 stop)
 echo "Removing tun modules"
